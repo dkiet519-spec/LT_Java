@@ -1,5 +1,6 @@
 package communityuni.com;
 import java.util.Scanner;
+import java.util.InputMismatchException;// thư biện bắt người dùng phải nhập sô
 public class nhapmangn {
 
 	public static void main(String[] args) {
@@ -75,7 +76,9 @@ public class nhapmangn {
 		  	SelectionSortgiamdan(a);
 				
 			}
-			catch(InputMismatchException e) 
+			catch(InputMismatchException e)
+			//InputMismatchException ý muốn nói là bắt người dùng phỉa nhập số.
+			//vì trong java ghi user bấm chữ thay vì số nó sẽ lỗi ko cho người dùng nhập lại 'việc đó giúp cho người dùng nhập lại'
 			{
 				System.out.println("Kich thuoc mang phai >0");
 			}
