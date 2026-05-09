@@ -19,7 +19,7 @@ public class xaydunglopnhanvien {
 			this.ho = ho;
 			this.ten = ten;
 			
-			
+			//*
 			if(So_sp >= 0)
 			{
 				this.So_sp = So_sp;
@@ -30,10 +30,42 @@ public class xaydunglopnhanvien {
 			{
 				this.So_sp = 0;
 			}
-		
-			
-			
+		    //*
+			//*this.SoSP = (soSP >= 0) ? soSP : 0;*//
+
+	
 		}
+	    public String getHo() {return ho;}
+	    
+	    public void setHo(String ho) {this.ho = ho;}
+	    
+	    public String getTen() {return ten;}
+	    
+	    public void setTen(String ten) {this.ten = ten;}
+	    
+	    public double getLuongNhanVien()
+	    {
+	    	double dongia = 0;
+	    	if (So_sp > 600)
+	    		dongia = 0.65;
+	    	else 
+	    		if(So_sp > 400 )
+	    		{
+	    			dongia = 0.6;
+	    			
+	    		}
+	    		else 
+	    			if(So_sp > 200)
+	    			{
+	    				dongia = 0.55;   				
+	    			}
+	    			else 
+	    				if(So_sp > 1)
+	    				{
+	    					dongia = 0.5;
+	    				}
+	    	return So_sp * dongia;
+	    }
 	}
 	
 	
