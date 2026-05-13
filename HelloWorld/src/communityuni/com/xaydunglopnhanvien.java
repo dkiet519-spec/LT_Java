@@ -66,6 +66,17 @@ public class xaydunglopnhanvien {
 	    				}
 	    	return So_sp * dongia;
 	    }
+	    public boolean LonHon(nhanvien nv2)
+	    {
+	    	if (this.So_sp > nv2.So_sp)
+	    		return true;
+	    	else
+	    		return false;
+	    	
+	    	
+	    }
+	    
+	    
 	}
 	
 	
