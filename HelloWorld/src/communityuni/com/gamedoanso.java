@@ -8,7 +8,7 @@ public class gamedoanso {
 		Scanner sc = new Scanner(System.in);
 		Random rd= new Random();
 		
-		int ngaunhien= rd.nextInt(101);
+		int ngaunhien= rd.nextInt(101);//in ra các số ngẫu nhiên cho mình giống  như scanf
 		int lansai=7;
 	
 		while (lansai > 0)

@@ -1,19 +1,14 @@
 package communityuni.com;
 import java.util.*;
 public class quan_ly_danh_sach_hoa_don_oop {// InvoiceTest
-	private String mahanghoa;
-	private String tenhanghoa;
-	private int soluonghanghoa;
-	private double dongiahanghoa;
-	public double thanhtien()
-	{
-		return soluonghanghoa*dongiahanghoa;
-	}
+	static Scanner sc= new Scanner(System.in);
+	static ArrayList<quanlydanhsach_Invoice> danhsach= new ArrayList<>();
+	
 	static void nhapdanhsach()
 	{
 		int n = 10;
-		Scanner sc = new Scanner(System.in);
-		for(int i = 0; i <= n; i++)
+		sc.nextLine();
+		for(int i = 0; i < n; i++)
 		{
 			String ma;
 			do {
@@ -28,10 +23,15 @@ public class quan_ly_danh_sach_hoa_don_oop {// InvoiceTest
 			System.out.println("Đơn Giá Hàng Hóa");
 			double dongia=sc.nextDouble();
 			
-			
-			
-		}
-		
+			danhsach.add(new quanlydanhsach_Invoice(ma, ten, soluong, dongia));		
+		}		
+	}
+	static int timmakhac(String ma) {
+	    for (int i = 0; i < danhsach.size(); i++) {
+	        if (danhsach.get(i).getmahanghoa().equals(ma))
+	            return i;
+	    }
+	    return -1;
 	}
 	
 	static void xuatdanhsach()
@@ -53,7 +53,9 @@ public class quan_ly_danh_sach_hoa_don_oop {// InvoiceTest
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc= new Scanner(System.in);
+		
+		
+		
 		int chon;
 		do 
 		{
