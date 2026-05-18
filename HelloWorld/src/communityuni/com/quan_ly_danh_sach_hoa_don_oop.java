@@ -7,25 +7,28 @@ public class quan_ly_danh_sach_hoa_don_oop {// InvoiceTest
 	static void nhapdanhsach()
 	{
 		int n = 10;
-		sc.nextLine();
+		
 		for(int i = 0; i < n; i++)
 		{
 			String ma;
 			do {
 				System.out.println("Nhập Mã Hàng Hóa:");
 				ma=sc.nextLine();
-			}while(timmakhac(ma) !=-1);
+			}while(timmakhac(ma) !=-1);//*-
 			
 			System.out.println("Nhập tên Hàng Hóa:");
 			String ten=sc.nextLine();
 			System.out.println("Nhập Số Lượng Hàng Hóa:");
 			int soluong=sc.nextInt();
+			sc.nextLine();//vì sao lại đặt ký tự ở đây là do khi ta nhập xong máy tự động bỏ qua qua luôn phần nhập tiếp theo thế nên cần đặt ký tự ở đây ngầm hiểu là cho máy tự động lưu lại biến đừng dể bỏ phần nhập đó đừng để rỗng
 			System.out.println("Đơn Giá Hàng Hóa");
 			double dongia=sc.nextDouble();
+			sc.nextLine();//dưới đây cx như ở trên
 			
 			danhsach.add(new quanlydanhsach_Invoice(ma, ten, soluong, dongia));		
 		}		
 	}
+//thuật toán này là 1 phần ở thuật toán trên (//*-) giúp cho việc kiểm tra coi có mã ta nhập có cùng mã cũ ko, nếu có thì dừng,ko cho qua 
 	static int timmakhac(String ma) {
 	    for (int i = 0; i < danhsach.size(); i++) {
 	        if (danhsach.get(i).getmahanghoa().equals(ma))
@@ -33,9 +36,16 @@ public class quan_ly_danh_sach_hoa_don_oop {// InvoiceTest
 	    }
 	    return -1;
 	}
+	//
 	
 	static void xuatdanhsach()
 	{
+		for(int i = 0; i < danhsach.size(); i++)
+		{
+			System.out.println("Đây là tất cả danh sách mà bạn vừa nhập"+ danhsach.get(i).tra_ve());
+			//get là phương thức có sẵn của ArrayList dùng để lấy 1 phần tử theo vị trí
+		}
+		
 		
 	}
 	static void sapxepdanhsach()
@@ -73,9 +83,13 @@ public class quan_ly_danh_sach_hoa_don_oop {// InvoiceTest
 		    case 1:
 		    	System.out.println("Bạn chọn nhập Danh Sách ");
 		    	//gọi lại hàm nhập
+		    	 nhapdanhsach();
+		    	
 		    	break;
 		    case 2:
 		    	System.out.println("Bạn Chọn Xuất Danh Sách");
+		    	xuatdanhsach();
+		    	
 		    	//
 		    	break;
 		    case 3:
