@@ -77,6 +77,7 @@ public class quan_ly_danh_sach_hoa_don_oop {// InvoiceTest
 		    System.out.println("0.thoat chương trình");
 		    
 		    chon = sc.nextInt();
+		    sc.nextLine();//phần này nó lôix giống phần ở trên nhưng khi chạy chỉ lỗi lần nhập đầu tiên phần còn lại bình thường là do đã ghi thêm ký tự vào
 		  
 		    switch (chon)
 		    {
