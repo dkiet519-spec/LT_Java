@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 public class javaConnection {
 	 private static final String URL = "jdbc:mysql://localhost:3306/quanlygiaoduc";
 	    private static final String USER = "TRUONGHOC";
-	    private static final String PASSWORD = "kiet@147354459"; 
+	    private static final String PASSWORD = "**********"; 
 
 	    public static Connection getConnection() {
 	        try {
